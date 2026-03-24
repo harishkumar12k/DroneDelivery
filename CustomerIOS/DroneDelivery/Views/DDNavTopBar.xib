@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DDNavTopBar" customModule="DroneDelivery" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="7NT-gQ-YXz"/>
+                <outlet property="navBarTitleLabel" destination="ig4-Ez-IUt" id="aE3-zB-l2e"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="76"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y42-zb-3GP">
+                    <rect key="frame" x="16" y="18" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="3Lq-cD-tHA"/>
+                        <constraint firstAttribute="height" constant="40" id="ESu-ZM-hbo"/>
+                    </constraints>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="arrow.left" catalog="system"/>
+                    <connections>
+                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="fFk-Xn-ZKf"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ig4-Ez-IUt">
+                    <rect key="frame" x="72" y="28" width="305" height="20.333333333333329"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" name="ColorPrimary"/>
+            <constraints>
+                <constraint firstItem="y42-zb-3GP" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="8Rq-pv-xcB"/>
+                <constraint firstAttribute="trailing" secondItem="ig4-Ez-IUt" secondAttribute="trailing" constant="16" id="AMA-fR-IUp"/>
+                <constraint firstItem="y42-zb-3GP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="IR5-od-F6s"/>
+                <constraint firstItem="ig4-Ez-IUt" firstAttribute="centerY" secondItem="y42-zb-3GP" secondAttribute="centerY" id="YGB-YZ-dvB"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="y42-zb-3GP" secondAttribute="bottom" id="ba7-Uv-KAg"/>
+                <constraint firstItem="y42-zb-3GP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" id="kui-Qf-dDf"/>
+                <constraint firstItem="ig4-Ez-IUt" firstAttribute="leading" secondItem="y42-zb-3GP" secondAttribute="trailing" constant="16" id="mP0-sq-S1N"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="136.64122137404578" y="92.957746478873247"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow.left" catalog="system" width="128" height="95"/>
+        <namedColor name="ColorPrimary">
+            <color red="0.54509803921568623" green="0.81960784313725488" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
