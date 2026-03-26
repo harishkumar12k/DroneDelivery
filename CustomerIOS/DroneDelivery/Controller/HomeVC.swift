@@ -11,20 +11,54 @@ class HomeVC: UIViewController, CVCellTappedDelegate {
     
     // MARK: IBOutlets
     @IBOutlet weak var productsSV: UIStackView!
+    @IBOutlet weak var addressTitle: UILabel!
+    @IBOutlet weak var fullAddress: UILabel!
+    @IBOutlet weak var cartButton: UIButton!
+    @IBOutlet weak var addressView: UIView!
+    @IBOutlet weak var searchView: UIView!
+    @IBOutlet weak var advertisingView: UIView!
+    @IBOutlet weak var searchBar: UITextField!
     
     // MARK: IBAction
     @IBAction func cartAction(_ sender: UIButton) {
         gotoCart()
     }
     
+    var homeStack = AppLayout().homeStack
+    
     // MARK: Controller Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        if productsSV != nil {
-            addCategoryView()
-            addView(name: "2 Minutes delivery")
-            addView(name: "5 Minutes delivery")
-            addSingleLabelView(quote: "All days are not same.")
+        for stack in homeStack {
+            switch stack {
+            case .address(let addressData):
+                print("Rendering for \(addressData)")
+            case .search(let searchData):
+                print("Rendering for \(searchData)")
+                searchBar.placeholder = searchData.placeholder
+                if searchData.isHidden {
+                    searchView.removeFromSuperview()
+                }
+            case .advertise(let advertiseData):
+                print("Rendering for \(advertiseData)")
+                if advertiseData.isHidden {
+                    advertisingView.removeFromSuperview()
+                }
+            case .category(let categoryData):
+                print("Rendering for \(categoryData)")
+                if productsSV != nil {
+                    addCategoryView(images: categoryData.categoryList)
+                }
+            case .quickProducts(let products):
+                if productsSV != nil {
+                    for product in products {
+                        addView(name: product.title)
+                    }
+                }
+                print("Rendering for \(products)")
+            case .quote(let quoteData):
+                addSingleLabelView(quote: quoteData.quote)
+            }
         }
     }
     
@@ -62,9 +96,10 @@ extension HomeVC {
     }
 
     // MARK: Add Views
-    func addCategoryView() {
+    func addCategoryView(images: [Category]) {
         DispatchQueue.main.async {
             let view = ItemCategoryCV(frame: CGRect(x: 0, y: 0, width: self.productsSV.frame.width, height: 300))
+            view.addCategories(images: images)
             self.productsSV.addArrangedSubview(view)
             view.cellTapDelegate = self
         }
