@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -10,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DDNavTopBar" customModule="DroneDelivery" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="y42-zb-3GP" id="zSa-xe-okP"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="7NT-gQ-YXz"/>
                 <outlet property="navBarTitleLabel" destination="ig4-Ez-IUt" id="aE3-zB-l2e"/>
             </connections>
@@ -59,7 +61,7 @@
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="95"/>
         <namedColor name="ColorPrimary">
-            <color red="0.54509803921568623" green="0.81960784313725488" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20784313725490197" green="0.2196078431372549" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

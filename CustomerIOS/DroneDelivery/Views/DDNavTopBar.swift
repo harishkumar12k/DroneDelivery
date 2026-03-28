@@ -12,6 +12,7 @@ class DDNavTopBar: UIView {
     // MARK: IBOutlets
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var navBarTitleLabel: UILabel!
+    @IBOutlet weak var backButton: UIButton!
     
     // MARK: IBAction
     @IBAction func backAction(_ sender: UIButton) {
@@ -36,6 +37,8 @@ class DDNavTopBar: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        navBarTitleLabel.textColor = .white
+        backButton.tintColor = .white
         // Further setup can go here
     }
 }

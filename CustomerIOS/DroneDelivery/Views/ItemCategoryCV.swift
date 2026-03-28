@@ -66,7 +66,7 @@ extension ItemCategoryCV: UICollectionViewDataSource, UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        cellTapDelegate.didTapAction(type: 0)
+        cellTapDelegate.didTapAction(type: 0, title: imagesArray[indexPath.row].title)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

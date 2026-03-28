@@ -36,6 +36,7 @@ struct CategoryView {
 struct Category {
     var image: String
     var type: String
+    var title: String
 }
 
 struct QuickProducts {
@@ -79,18 +80,18 @@ class AppLayout {
         .search(SearchBar(placeholder: "Search here...", isHidden: false)),
         .advertise(AdvertiseBar(images: ["", ""], isHidden: false)),
         .category(CategoryView(title: "Category", categoryList: [
-            Category(image: "viggies", type: ""),
-            Category(image: "fruits", type: ""),
-            Category(image: "milkProducts", type: ""),
-            Category(image: "meatAndFish", type: ""),
-            Category(image: "medicineAndTablets", type: ""),
-            Category(image: "cakeAndChocolates", type: ""),
-            Category(image: "mobileAndAccessories", type: ""),
-            Category(image: "dressAndShoes", type: ""),
-            Category(image: "sportsAndGames", type: ""),
-            Category(image: "toys", type: ""),
-            Category(image: "cosmetics", type: ""),
-            Category(image: "petFood", type: "")
+            Category(image: "viggies", type: "viggies", title: "Viggies"),
+            Category(image: "fruits", type: "fruits", title: "Fruits"),
+            Category(image: "milkProducts", type: "milkProducts", title: "Milk Products"),
+            Category(image: "meatAndFish", type: "meatAndFish", title: "Meat And Fish"),
+            Category(image: "medicineAndTablets", type: "medicineAndTablets", title: "Medicine And Tablets"),
+            Category(image: "cakeAndChocolates", type: "cakeAndChocolates", title: "Cake And Chocolates"),
+            Category(image: "mobileAndAccessories", type: "mobileAndAccessories", title: "Mobile And Accessories"),
+            Category(image: "dressAndShoes", type: "dressAndShoes", title: "Dress And Shoes"),
+            Category(image: "sportsAndGames", type: "sportsAndGames", title: "Sports And Games"),
+            Category(image: "toys", type: "toys", title: "Toys"),
+            Category(image: "cosmetics", type: "cosmetics", title: "Cosmetics"),
+            Category(image: "petFood", type: "petFood", title: "Pet Food")
         ])),
         .quickProducts([
             QuickProducts(title: "2 Minutes Delivery", producst: []),

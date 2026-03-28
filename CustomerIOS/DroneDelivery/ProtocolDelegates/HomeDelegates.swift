@@ -6,7 +6,13 @@
 //
 
 protocol CVCellTappedDelegate: AnyObject {
-    func didTapAction(type: Int)
+    func didTapAction(type: Int, title: String)
+}
+
+extension CVCellTappedDelegate {
+    func didTapAction(type: Int, title: String = "") {
+        
+    }
 }
 
 protocol BackTappedDelegate: AnyObject {

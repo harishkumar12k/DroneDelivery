@@ -67,9 +67,9 @@ class HomeVC: UIViewController, CVCellTappedDelegate {
 extension HomeVC {
     
     // MARK: Protocol-Delegates
-    func didTapAction(type: Int) {
+    func didTapAction(type: Int, title: String) {
         if type == 0 {
-            gotoItemsList()
+            gotoItemsList(title: title)
         } else {
             gotoItemDetail()
         }
@@ -82,10 +82,10 @@ extension HomeVC {
         navigationController?.pushViewController(detailVC, animated: true)
     }
     
-    func gotoItemsList() {
+    func gotoItemsList(title: String) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let itemsListVC = storyboard.instantiateViewController(withIdentifier: "ItemsListVC") as! ItemsListVC
-        itemsListVC.screenTitle = "Category"
+        itemsListVC.screenTitle = title
         navigationController?.pushViewController(itemsListVC, animated: true)
     }
     

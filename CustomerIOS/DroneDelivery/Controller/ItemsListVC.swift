@@ -24,6 +24,7 @@ class ItemsListVC: UIViewController, BackTappedDelegate {
         navBar.navBarTitleLabel.text = screenTitle
         itemListTV.dataSource = self
         itemListTV.delegate = self
+        itemListTV.separatorStyle = .none
         let nib = UINib(nibName: "ItemCategoryTVCell", bundle: nil)
         itemListTV.register(nib, forCellReuseIdentifier: "ItemCategoryTVCell")
     }
@@ -47,10 +48,14 @@ extension ItemsListVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCategoryTVCell", for: indexPath) as! ItemCategoryTVCell
-        cell.textLabel1.text = sampleData[indexPath.row].name
-        cell.textLabel2.text = sampleData[indexPath.row].discountAmount
-        cell.textLabel3.text = "\(sampleData[indexPath.row].rating) ratings"
-        cell.textLabel4.text = sampleData[indexPath.row].price
+        cell.selectionStyle = .none
+        cell.nameLabel.text = sampleData[indexPath.row].name
+        cell.weightLabel.text = sampleData[indexPath.row].weight
+        cell.sizeLabel.text = sampleData[indexPath.row].size
+        cell.offerPriceLabel.text = "\(sampleData[indexPath.row].currency) \(sampleData[indexPath.row].discountAmount)"
+        cell.ratingLabel.text = "\(sampleData[indexPath.row].rating) ratings"
+        cell.originalPriceLabel.text = "\(sampleData[indexPath.row].currency) \(sampleData[indexPath.row].price)"
+        cell.offerPercentLabel.text = "  \(sampleData[indexPath.row].discountPercent)% OFF  "
         return cell
     }
     
