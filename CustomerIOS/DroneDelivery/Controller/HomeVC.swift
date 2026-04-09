@@ -88,6 +88,9 @@ class HomeVC: UIViewController, CVCellTappedDelegate {
             string: "Search here...",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.colorText1]
         )
+        addressTitle.font = .fontRegular(size: 17)
+        fullAddress.font = .fontLight(size: 12)
+        searchBar.font = .fontRegular(size: 12)
     }
     
 }

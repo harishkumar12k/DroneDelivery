@@ -46,6 +46,12 @@ class PickUpDropVC: UIViewController {
         dropToAddressLabel.textColor = .colorText1
         noteLabel.textColor = .colorPrimary
         activityTitleLabel.textColor = .colorText2
+        pickUpLabel.font = .fontRegular(size: 17)
+        pickUpAddressLabel.font = .fontLight(size: 12)
+        dropToLabel.font = .fontRegular(size: 17)
+        dropToAddressLabel.font = .fontLight(size: 12)
+        noteLabel.font = .fontLight(size: 17)
+        activityTitleLabel.font = .fontBold(size: 17)
     }
     
 }

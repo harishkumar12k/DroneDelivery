@@ -33,6 +33,7 @@ class OrderHistoryVC: UIViewController {
         statusBarView.backgroundColor = .colorPrimary
         bgTitleLabelView.backgroundColor = .colorPrimary
         titleLabel.textColor = .colorText1
+        titleLabel.font = .fontBold(size: 17)
     }
 
 }

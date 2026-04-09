@@ -41,6 +41,10 @@ class ProfileVC: UIViewController {
         logoutButton.backgroundColor = .colorSupport1
         logoutButton.setTitleColor(.colorText1, for: .normal)
         appVersionLabel.textColor = .colorText2
+        userNameLabel.font = .fontBold(size: 17)
+        userNumberLabel.font = .fontRegular(size: 17)
+        logoutButton.titleLabel?.font = .fontRegular(size: 15)
+        appVersionLabel.font = .fontLight(size: 17)
     }
     
 }
