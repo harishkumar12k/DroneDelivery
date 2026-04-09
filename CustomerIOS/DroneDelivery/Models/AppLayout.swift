@@ -69,10 +69,10 @@ enum HomeStack {
 class AppLayout {
     
     var tabs: [Tab] = [
-        Tab(iconSelected: "house.fill", iconDeselevcted: "house", name: "Home", controller: "HomeVC"),
-        Tab(iconSelected: "arrow.up.arrow.down.square.fill", iconDeselevcted: "arrow.up.arrow.down.square", name: "Pick Up/Drop", controller: "PickUpDropVC"),
-        Tab(iconSelected: "clock.badge.checkmark.fill", iconDeselevcted: "clock.badge.checkmark", name: "Order History", controller: "OrderHistoryVC"),
-        Tab(iconSelected: "person.fill", iconDeselevcted: "person", name: "Profile", controller: "ProfileVC")
+        Tab(iconSelected: "home", iconDeselevcted: "home", name: "Home", controller: "HomeVC"),
+        Tab(iconSelected: "pickUpDrop", iconDeselevcted: "pickUpDrop", name: "Pick Up/Drop", controller: "PickUpDropVC"),
+        Tab(iconSelected: "orderHistory", iconDeselevcted: "orderHistory", name: "Order History", controller: "OrderHistoryVC"),
+        Tab(iconSelected: "profile", iconDeselevcted: "profile", name: "Profile", controller: "ProfileVC")
     ]
     
     var homeStack: [HomeStack] = [

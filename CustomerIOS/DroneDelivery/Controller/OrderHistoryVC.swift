@@ -11,6 +11,9 @@ class OrderHistoryVC: UIViewController {
 
     // MARK: IBOutlets
     @IBOutlet weak var orderHistoryListTV: UITableView!
+    @IBOutlet weak var statusBarView: UIView!
+    @IBOutlet weak var bgTitleLabelView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     // MARK: Variables
     var screenTitle = ""
@@ -23,6 +26,13 @@ class OrderHistoryVC: UIViewController {
         orderHistoryListTV.delegate = self
         let nib = UINib(nibName: "OrderHistoryTVCell", bundle: nil)
         orderHistoryListTV.register(nib, forCellReuseIdentifier: "OrderHistoryTVCell")
+        initialiseViews()
+    }
+    
+    func initialiseViews() {
+        statusBarView.backgroundColor = .colorPrimary
+        bgTitleLabelView.backgroundColor = .colorPrimary
+        titleLabel.textColor = .colorText1
     }
 
 }

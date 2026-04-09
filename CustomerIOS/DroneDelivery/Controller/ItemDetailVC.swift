@@ -12,13 +12,23 @@ class ItemDetailVC: UIViewController, BackTappedDelegate, CVCellTappedDelegate {
     // MARK: IBOutlets
     @IBOutlet weak var itemDetailSV: UIStackView!
     @IBOutlet weak var navBar: DDNavTopBar!
-
+    @IBOutlet weak var statusBarView: UIView!
+    @IBOutlet weak var bgScrollView: UIScrollView!
+    @IBOutlet weak var bgScrollContentView: UIView!
+    @IBOutlet weak var bgStackView: UIStackView!
+    @IBOutlet weak var productImageSliderView: HorizontalImageCV!
+    
     // MARK: Controller Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.backActionDelegate = self
         addView()
         addView(name: "Similar Products")
+        initialiseViews()
+    }
+    
+    func initialiseViews() {
+        statusBarView.backgroundColor = .colorPrimary
     }
     
 }

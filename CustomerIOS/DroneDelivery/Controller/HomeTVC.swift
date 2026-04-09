@@ -20,8 +20,8 @@ class HomeTVC: UITabBarController {
         for tab in homeTabs {
             let firstVC = storyboard.instantiateViewController(withIdentifier: tab.controller)
             firstVC.view.backgroundColor = .systemBackground
-            firstVC.tabBarItem = UITabBarItem(title: tab.name, image: UIImage(systemName: tab.iconDeselevcted), tag: 0)
-            firstVC.tabBarItem.selectedImage = UIImage(systemName: tab.iconSelected)
+            firstVC.tabBarItem = UITabBarItem(title: tab.name, image: UIImage(named: tab.iconDeselevcted), tag: 0)
+            firstVC.tabBarItem.selectedImage = UIImage(named: tab.iconSelected)
             let nav = UINavigationController(rootViewController: firstVC)
             nav.isNavigationBarHidden = true
             controllers.append(nav)
@@ -35,12 +35,13 @@ class HomeTVC: UITabBarController {
         
         let appearance = UITabBarAppearance()
         appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = primaryColor
         
-        appearance.stackedLayoutAppearance.normal.iconColor = primaryColor
-        appearance.stackedLayoutAppearance.normal.titleTextAttributes = [.foregroundColor: primaryColor]
+        appearance.stackedLayoutAppearance.normal.iconColor = UIColor.colorPrimary100
+        appearance.stackedLayoutAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.colorPrimary100]
         
-        appearance.stackedLayoutAppearance.selected.iconColor = primaryColor
-        appearance.stackedLayoutAppearance.selected.titleTextAttributes = [.foregroundColor: primaryColor]
+        appearance.stackedLayoutAppearance.selected.iconColor = UIColor.colorText1
+        appearance.stackedLayoutAppearance.selected.titleTextAttributes = [.foregroundColor: UIColor.colorText1]
         
         tabBar.standardAppearance = appearance
         

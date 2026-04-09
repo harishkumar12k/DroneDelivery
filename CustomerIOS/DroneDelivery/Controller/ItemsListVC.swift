@@ -12,6 +12,7 @@ class ItemsListVC: UIViewController, BackTappedDelegate {
     // MARK: IBOutlets
     @IBOutlet weak var itemListTV: UITableView!
     @IBOutlet weak var navBar: DDNavTopBar!
+    @IBOutlet weak var statusBarView: UIView!
     
     // MARK: Variables
     var screenTitle = ""
@@ -27,6 +28,11 @@ class ItemsListVC: UIViewController, BackTappedDelegate {
         itemListTV.separatorStyle = .none
         let nib = UINib(nibName: "ItemCategoryTVCell", bundle: nil)
         itemListTV.register(nib, forCellReuseIdentifier: "ItemCategoryTVCell")
+        initialiseViews()
+    }
+    
+    func initialiseViews() {
+        statusBarView.backgroundColor = .colorPrimary
     }
 
 }

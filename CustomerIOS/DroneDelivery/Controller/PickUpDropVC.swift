@@ -11,6 +11,16 @@ class PickUpDropVC: UIViewController {
     
     // MARK: IBOutlets
     @IBOutlet weak var pickUpDropTV: UITableView!
+    @IBOutlet weak var statusBarView: UIView!
+    @IBOutlet weak var pickUpDropView: UIView!
+    @IBOutlet weak var pickUpLabel: UILabel!
+    @IBOutlet weak var pickUpAddressLabel: UILabel!
+    @IBOutlet weak var dropToLabel: UILabel!
+    @IBOutlet weak var dropToAddressLabel: UILabel!
+    @IBOutlet weak var noteLabel: UILabel!
+    @IBOutlet weak var mapView: UIView!
+    @IBOutlet weak var activityTitleLabel: UILabel!
+    @IBOutlet weak var activityTV: UITableView!
     
     // MARK: Variables
     var screenTitle = ""
@@ -23,6 +33,19 @@ class PickUpDropVC: UIViewController {
         pickUpDropTV.delegate = self
         let nib = UINib(nibName: "PickUpDropTVCell", bundle: nil)
         pickUpDropTV.register(nib, forCellReuseIdentifier: "PickUpDropTVCell")
+        initialiseViews()
+    }
+    
+    func initialiseViews() {
+        self.view.backgroundColor = .colorText1
+        statusBarView.backgroundColor = .colorPrimary
+        pickUpDropView.backgroundColor = .colorPrimary
+        pickUpLabel.textColor = .colorText1
+        pickUpAddressLabel.textColor = .colorText1
+        dropToLabel.textColor = .colorText1
+        dropToAddressLabel.textColor = .colorText1
+        noteLabel.textColor = .colorPrimary
+        activityTitleLabel.textColor = .colorText2
     }
     
 }

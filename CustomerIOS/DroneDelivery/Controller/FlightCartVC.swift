@@ -11,6 +11,8 @@ class FlightCartVC: UIViewController, BackTappedDelegate {
 
     // MARK: IBOutlets
     @IBOutlet weak var navBar: DDNavTopBar!
+    @IBOutlet weak var statusBarView: UIView!
+    @IBOutlet weak var cartTV: UITableView!
     
     // MARK: IBAction
     @IBAction func paymentAction(_ sender: UIButton) {
@@ -22,6 +24,11 @@ class FlightCartVC: UIViewController, BackTappedDelegate {
         super.viewDidLoad()
         navBar.backActionDelegate = self
         // Do any additional setup after loading the view.
+        initialiseViews()
+    }
+    
+    func initialiseViews() {
+        statusBarView.backgroundColor = .colorPrimary
     }
 
 }

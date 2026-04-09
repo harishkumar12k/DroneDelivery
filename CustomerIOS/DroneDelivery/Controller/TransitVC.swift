@@ -11,12 +11,19 @@ class TransitVC: UIViewController, BackTappedDelegate {
 
     // MARK: IBOutlets
     @IBOutlet weak var navBar: DDNavTopBar!
+    @IBOutlet weak var statusBarView: UIView!
+    @IBOutlet weak var mapView: UIView!
     
     // MARK: Controller Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.backActionDelegate = self
 
+        initialiseViews()
+    }
+    
+    func initialiseViews() {
+        statusBarView.backgroundColor = .colorPrimary
     }
 
 }

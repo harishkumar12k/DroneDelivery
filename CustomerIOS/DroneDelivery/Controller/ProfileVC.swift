@@ -11,6 +11,13 @@ class ProfileVC: UIViewController {
 
     // MARK: IBOutlets
     @IBOutlet weak var profileTV: UITableView!
+    @IBOutlet weak var statusBarView: UIView!
+    @IBOutlet weak var profileInfoView: UIView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var userNumberLabel: UILabel!
+    @IBOutlet weak var appVersionLabel: UILabel!
+    @IBOutlet weak var logoutButton: UIButton!
     
     // MARK: Variables
     var screenTitle = ""
@@ -23,6 +30,17 @@ class ProfileVC: UIViewController {
         profileTV.delegate = self
         let nib = UINib(nibName: "ProfileTVCell", bundle: nil)
         profileTV.register(nib, forCellReuseIdentifier: "ProfileTVCell")
+        initialiseViews()
+    }
+    
+    func initialiseViews() {
+        statusBarView.backgroundColor = .colorPrimary
+        profileInfoView.backgroundColor = .colorPrimary
+        userNameLabel.textColor = .colorText1
+        userNumberLabel.textColor = .colorText1
+        logoutButton.backgroundColor = .colorSupport1
+        logoutButton.setTitleColor(.colorText1, for: .normal)
+        appVersionLabel.textColor = .colorText2
     }
     
 }

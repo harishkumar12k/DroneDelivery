@@ -18,6 +18,13 @@ class HomeVC: UIViewController, CVCellTappedDelegate {
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var advertisingView: UIView!
     @IBOutlet weak var searchBar: UITextField!
+    @IBOutlet weak var statusBarView: UIView!
+    @IBOutlet weak var addressAndSearchView: UIStackView!
+    @IBOutlet weak var searchInternalView: UIView!
+    @IBOutlet weak var bgScrollView: UIScrollView!
+    @IBOutlet weak var bgScrollContentView: UIView!
+    @IBOutlet weak var scrollableStackView: UIStackView!
+    @IBOutlet weak var advertiseView: HorizontalImageCV!
     
     // MARK: IBAction
     @IBAction func cartAction(_ sender: UIButton) {
@@ -60,6 +67,27 @@ class HomeVC: UIViewController, CVCellTappedDelegate {
                 addSingleLabelView(quote: quoteData.quote)
             }
         }
+        initialiseViews()
+    }
+    
+    func initialiseViews() {
+        DispatchQueue.main.async {
+            self.searchInternalView.layer.cornerRadius = self.searchInternalView.frame.height/2
+        }
+        statusBarView.backgroundColor = .colorPrimary
+        addressAndSearchView.backgroundColor = .colorPrimary
+        addressView.backgroundColor = .colorPrimary
+        addressTitle.textColor = .colorText1
+        fullAddress.textColor = .colorText1
+        cartButton.tintColor = .colorText1
+        searchView.backgroundColor = .colorPrimary
+        searchInternalView.backgroundColor = .colorPrimary200
+        searchBar.textColor = .colorText1
+        searchBar.tintColor = .colorText1
+        searchBar.attributedPlaceholder = NSAttributedString(
+            string: "Search here...",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.colorText1]
+        )
     }
     
 }
