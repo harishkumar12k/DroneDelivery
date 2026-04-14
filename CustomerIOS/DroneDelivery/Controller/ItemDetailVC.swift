@@ -22,7 +22,9 @@ class ItemDetailVC: UIViewController, BackTappedDelegate, CVCellTappedDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.backActionDelegate = self
+        navBar.navBarTitleLabel.text = "Details"
         addView()
+        addProductInformationView()
         addView(name: "Similar Products")
         initialiseViews()
     }
@@ -47,22 +49,39 @@ extension ItemDetailVC {
     // MARK: Add Views
     func addView() {
         DispatchQueue.main.async {
-            let view = ItemPriceAndWeightView(frame: CGRect(x: 0, y: 0, width: self.itemDetailSV.frame.width, height: 200))
-            view.InfoText1.text = "Text 1Text 1Text 1Text 1Text 1Text 1Text 1Text 1Text 1Text 1Text 1Text 1Text 1Text 1Text 1Text 1Text 1Text 1Text 1Text 1Text 1Text 1Text 1Text 1Text 1Text 1Text 1Text 1"
-            view.InfoText2.text = "Text 2"
-            view.InfoText3.text = "Text 3"
-            view.InfoText4.text = "Text 4"
-            view.InfoText5.text = "Text 5"
-            view.InfoText6.text = "Text 6"
-            view.InfoText7.text = "A string is a series of characters, such as Swift, that forms a collection. Strings in Swift are Unicode correct and locale insensitive, and are designed to be efficient. The String type bridges with the Objective-C class NSString and offers interoperability with C functions that works with strings."
+            let view = ItemPriceAndWeightView(frame: CGRect(x: 0, y: 0, width: self.itemDetailSV.frame.width, height: 100))
+            view.offerPrice.text = "450".addRupeePrefix()
+            view.originalPrice.text = "500".addRupeePrefix()
+            view.offerInPercent.text = "10".addPercentOffSuffix().addPadding(3)
+            view.productName.text = "Demo Tabs (25mg)"
+            view.productWeight.text = "100 gms"
+            view.productRating.text = "4.9 ratings"
+            view.productDimension.text = "20cm x 15cm x 15cm"
+            self.itemDetailSV.addArrangedSubview(view)
+        }
+    }
+    
+    // MARK: Add Views
+    func addProductInformationView() {
+        DispatchQueue.main.async {
+            let view = ItemInformationView(frame: CGRect(x: 0, y: 0, width: self.itemDetailSV.frame.width, height: 100))
+            view.viewTitle.text = "Product information"
+            view.primaryTitle.text = "Brand"
+            view.primaryInfo.text = "Demo"
+            view.secondaryTitle.text = "Type"
+            view.secondaryInfo.text = "Chips"
+            view.tertiaryTitle.text = "Flavour"
+            view.tertiaryInfo.text = "Salted"
+            view.longDescription.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
             self.itemDetailSV.addArrangedSubview(view)
         }
     }
     
     func addView(name: String) {
         DispatchQueue.main.async {
-            let view = LabelWithCollectionHorizontalView(frame: CGRect(x: 0, y: 0, width: self.itemDetailSV.frame.width, height: 200))
+            let view = LabelWithCollectionHorizontalView(frame: CGRect(x: 0, y: 0, width: self.itemDetailSV.frame.width, height: 300))
             view.titleLabel.text = name
+            view.allProducts = AppLayout().similarMinutesData
             view.horizontalCVHeightConstraint.constant = 200
             self.itemDetailSV.addArrangedSubview(view)
             view.cellTapDelegate = self

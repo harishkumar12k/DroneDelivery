@@ -17,7 +17,12 @@ class LabelWithCollectionHorizontalView: UIView {
     
     // MARK: Variables
     var cellTapDelegate: CVCellTappedDelegate!
+    var allProducts: [HomeProduct] = []
 
+    @IBAction func showAllAction(_ sender: UIButton) {
+        cellTapDelegate.didTapAction(type: 0, title: titleLabel.text ?? "")
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -44,21 +49,27 @@ class LabelWithCollectionHorizontalView: UIView {
 extension LabelWithCollectionHorizontalView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return allProducts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemImageAndNameCVCell", for: indexPath) as! ItemImageAndNameCVCell
-        cell.nameLabel.text = "Item \(indexPath.row), Item \(indexPath.row), Item \(indexPath.row), Item \(indexPath.row)"
+        let product = allProducts[indexPath.row]
+        cell.nameLabel.text = product.title
+        cell.weightLabel.text = product.weight.addSuffix(" gms")
+        cell.offerPriceLabel.text = product.offerPrice.addRupeePrefix()
+        cell.maxPriceLabel.text = product.originalPrice.addRupeePrefix()
+        cell.offerInPercent.text = product.offerPercent.addPercentOffSuffix().addPadding(3)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        cellTapDelegate.didTapAction(type: 1)
+        let product = allProducts[indexPath.row]
+        cellTapDelegate.didTapAction(type: 1, title: product.title)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: horizontalCV.frame.size.width/3, height: 240)
+        return CGSize(width: horizontalCV.frame.size.width/3, height: horizontalCV.frame.size.height)
     }
     
 }

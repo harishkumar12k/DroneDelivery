@@ -59,7 +59,7 @@ class HomeVC: UIViewController, CVCellTappedDelegate {
             case .quickProducts(let products):
                 if productsSV != nil {
                     for product in products {
-                        addView(name: product.title)
+                        addView(name: product.title, allProducts: product.allProducts)
                     }
                 }
                 print("Rendering for \(products)")
@@ -136,11 +136,12 @@ extension HomeVC {
         }
     }
     
-    func addView(name: String) {
+    func addView(name: String, allProducts: [HomeProduct]) {
         DispatchQueue.main.async {
             let view = LabelWithCollectionHorizontalView(frame: CGRect(x: 0, y: 0, width: self.productsSV.frame.width, height: 200))
             view.titleLabel.text = name
-            view.horizontalCVHeightConstraint.constant = 250
+            view.allProducts = allProducts
+            view.horizontalCVHeightConstraint.constant = 200
             self.productsSV.addArrangedSubview(view)
             view.cellTapDelegate = self
         }

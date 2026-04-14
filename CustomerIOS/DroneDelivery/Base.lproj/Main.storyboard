@@ -659,7 +659,7 @@
                                 <rect key="frame" x="0.0" y="118" width="393" height="112"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snZ-Ur-dnH">
-                                        <rect key="frame" x="8" y="15.999999999999998" width="281" height="20.333333333333329"/>
+                                        <rect key="frame" x="8" y="36.333333333333343" width="281" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -673,8 +673,14 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+91-9999999999" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEf-NO-n0i">
-                                        <rect key="frame" x="8" y="44.333333333333343" width="281" height="20.333333333333329"/>
+                                        <rect key="frame" x="8" y="64.666666666666657" width="281" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jb-ij-JFP">
+                                        <rect key="frame" x="8" y="7.9999999999999982" width="281" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -683,10 +689,13 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Dck-1V-heP" secondAttribute="trailing" constant="16" id="0ha-iC-ykf"/>
                                     <constraint firstItem="snZ-Ur-dnH" firstAttribute="leading" secondItem="Isn-6Y-3Rg" secondAttribute="leading" constant="8" id="5JG-p4-yjk"/>
+                                    <constraint firstItem="1jb-ij-JFP" firstAttribute="top" secondItem="Isn-6Y-3Rg" secondAttribute="top" constant="8" id="Bmu-Gt-FJv"/>
+                                    <constraint firstItem="1jb-ij-JFP" firstAttribute="leading" secondItem="Isn-6Y-3Rg" secondAttribute="leading" constant="8" id="EEJ-Hv-yiA"/>
+                                    <constraint firstItem="Dck-1V-heP" firstAttribute="leading" secondItem="1jb-ij-JFP" secondAttribute="trailing" constant="8" id="Ij7-od-jlm"/>
                                     <constraint firstItem="wEf-NO-n0i" firstAttribute="leading" secondItem="Isn-6Y-3Rg" secondAttribute="leading" constant="8" id="OQR-Qx-HG8"/>
+                                    <constraint firstItem="snZ-Ur-dnH" firstAttribute="top" secondItem="1jb-ij-JFP" secondAttribute="bottom" constant="8" id="OXL-UU-s9g"/>
                                     <constraint firstItem="wEf-NO-n0i" firstAttribute="top" secondItem="snZ-Ur-dnH" secondAttribute="bottom" constant="8" id="c8s-WC-Moz"/>
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wEf-NO-n0i" secondAttribute="bottom" constant="8" id="dor-0W-on2"/>
-                                    <constraint firstItem="snZ-Ur-dnH" firstAttribute="top" secondItem="Isn-6Y-3Rg" secondAttribute="top" constant="16" id="hkQ-Iz-Fky"/>
                                     <constraint firstAttribute="bottom" secondItem="Dck-1V-heP" secondAttribute="bottom" constant="16" id="kdv-IN-dIl"/>
                                     <constraint firstItem="Dck-1V-heP" firstAttribute="top" secondItem="Isn-6Y-3Rg" secondAttribute="top" constant="16" id="peX-c6-gVY"/>
                                     <constraint firstItem="Dck-1V-heP" firstAttribute="leading" secondItem="snZ-Ur-dnH" secondAttribute="trailing" constant="8" id="tOt-5o-3zo"/>
@@ -739,6 +748,7 @@
                         <outlet property="logoutButton" destination="KjQ-hO-j3E" id="Vmi-Vu-g4W"/>
                         <outlet property="profileInfoView" destination="Isn-6Y-3Rg" id="gtc-qD-Rov"/>
                         <outlet property="profileTV" destination="fRh-qg-hDg" id="qv3-IL-69u"/>
+                        <outlet property="profileTitleLabel" destination="1jb-ij-JFP" id="3cs-gU-mvX"/>
                         <outlet property="statusBarView" destination="cVP-Pq-8cR" id="Jsb-ao-lgI"/>
                         <outlet property="userImageView" destination="Dck-1V-heP" id="jkQ-vT-yXB"/>
                         <outlet property="userNameLabel" destination="snZ-Ur-dnH" id="ZU6-4L-51f"/>

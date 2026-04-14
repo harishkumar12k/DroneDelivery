@@ -10,14 +10,14 @@ import UIKit
 class ItemPriceAndWeightView: UIView {
 
     // MARK: IBOutlets
-    @IBOutlet weak var InfoText1: UILabel!
-    @IBOutlet weak var InfoText2: UILabel!
-    @IBOutlet weak var InfoText3: UILabel!
-    @IBOutlet weak var InfoText4: UILabel!
-    @IBOutlet weak var InfoText5: UILabel!
-    @IBOutlet weak var InfoText6: UILabel!
-    @IBOutlet weak var InfoText7: UILabel!
     @IBOutlet var contentView: UIView!
+    @IBOutlet weak var offerPrice: UILabel!
+    @IBOutlet weak var originalPrice: UILabel!
+    @IBOutlet weak var offerInPercent: UILabel!
+    @IBOutlet weak var productName: UILabel!
+    @IBOutlet weak var productWeight: UILabel!
+    @IBOutlet weak var productRating: UILabel!
+    @IBOutlet weak var productDimension: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,7 +34,19 @@ class ItemPriceAndWeightView: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        // Further setup can go here
+        initialiseViews()
     }
-
+    
+    func initialiseViews() {
+        offerInPercent.backgroundColor = .colorBanner
+        offerPrice.font = .fontBold(size: 24)
+        originalPrice.font = .fontSemiBold(size: 16)
+        offerInPercent.font = .fontSemiBold(size: 14)
+        productName.font = .fontBold(size: 17)
+        productWeight.font = .fontSemiBold(size: 12)
+        productRating.font = .fontLight(size: 12)
+        productDimension.font = .fontLight(size: 12)
+        originalPrice.addStrikeText()
+    }
+    
 }

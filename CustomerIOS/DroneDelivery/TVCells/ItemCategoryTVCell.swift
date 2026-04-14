@@ -20,35 +20,12 @@ class ItemCategoryTVCell: UITableViewCell {
     @IBOutlet weak var originalPriceLabel: UILabel!
     @IBOutlet weak var offerPriceLabel: UILabel!
     @IBOutlet weak var itemImageView: UIImageView!
-    @IBOutlet weak var addToCartSV: UIStackView!
-    @IBOutlet weak var addToCartButton: UIButton!
-    @IBOutlet weak var decreaseCartItem: UIButton!
-    @IBOutlet weak var increaseCartItem: UIButton!
-    
-    // MARK: IBAction
-    @IBAction func addToFlight(_ sender: UIButton) {
-        itemCount = 1
-        handleCartButtons()
-    }
-    
-    @IBAction func increaseItem(_ sender: UIButton) {
-        itemCount += 1
-        handleCartButtons()
-    }
-    
-    @IBAction func decreaseItem(_ sender: UIButton) {
-        itemCount -= 1
-        handleCartButtons()
-    }
-    
-    var itemCount: Int = 0
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
-        offerPercentLabel.text = "10% OFF"
+        offerPercentLabel.text = "10".addPercentOffSuffix().addPadding(3)
         offerPercentLabel.backgroundColor = .green
-        setShadowAndCorner()
-        handleCartButtons()
+        initialiseViews()
     }
     
     func setShadowAndCorner() {
@@ -60,38 +37,25 @@ class ItemCategoryTVCell: UITableViewCell {
         shadowView.layer.borderWidth = 0.5
         shadowView.layer.borderColor = UIColor.lightGray.cgColor
         bgView.layer.cornerRadius = 10
-        addToCartSV.layer.cornerRadius = addToCartSV.frame.size.height/2
-        addToCartButton.layer.borderWidth = 2
-        addToCartButton.layer.borderColor = UIColor.colorPrimary.cgColor
     }
     
-    func handleCartButtons() {
-        if itemCount == 0 {
-            DispatchQueue.main.async {
-                self.addToCartButton.isUserInteractionEnabled = true
-                self.decreaseCartItem.isHidden = true
-                self.increaseCartItem.isHidden = true
-                self.addToCartButton.setTitle("Add to flight", for: .normal)
-                self.addToCartButton.backgroundColor = .colorPrimary
-                self.addToCartButton.setTitleColor(.white, for: .normal)
-            }
-        } else {
-            DispatchQueue.main.async {
-                self.addToCartButton.isUserInteractionEnabled = false
-                self.decreaseCartItem.isHidden = false
-                self.increaseCartItem.isHidden = false
-                self.addToCartButton.setTitle("\(self.itemCount)", for: .normal)
-                self.addToCartButton.backgroundColor = UIColor.white
-                self.addToCartButton.setTitleColor(.colorPrimary, for: .normal)
-            }
-        }
-        
-    }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func initialiseViews() {
+        setShadowAndCorner()
+        offerPercentLabel.backgroundColor = .colorBanner
+        nameLabel.font = .fontBold(size: 20)
+        weightLabel.font = .fontSemiBold(size: 14)
+        ratingLabel.font = .fontLight(size: 12)
+        sizeLabel.font = .fontLight(size: 12)
+        offerPercentLabel.font = .fontSemiBold(size: 14)
+        originalPriceLabel.font = .fontRegular(size: 14)
+        offerPriceLabel.font = .fontSemiBold(size: 14)
+        originalPriceLabel.addStrikeText()
     }
     
 }

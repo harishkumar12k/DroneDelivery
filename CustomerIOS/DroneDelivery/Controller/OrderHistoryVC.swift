@@ -24,6 +24,7 @@ class OrderHistoryVC: UIViewController {
         super.viewDidLoad()
         orderHistoryListTV.dataSource = self
         orderHistoryListTV.delegate = self
+        orderHistoryListTV.separatorStyle = .none
         let nib = UINib(nibName: "OrderHistoryTVCell", bundle: nil)
         orderHistoryListTV.register(nib, forCellReuseIdentifier: "OrderHistoryTVCell")
         initialiseViews()
@@ -46,6 +47,7 @@ extension OrderHistoryVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrderHistoryTVCell", for: indexPath) as! OrderHistoryTVCell
+        cell.selectionStyle = .none
         let data = sampleData[indexPath.row]
         if data.isPickUpAndDrop == true {
             cell.textLabel1.text = "Package PickUp and Delivered in \(data.elapsedTime) Mins"

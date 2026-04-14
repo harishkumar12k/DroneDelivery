@@ -59,9 +59,9 @@ extension ItemsListVC: UITableViewDataSource, UITableViewDelegate {
         cell.weightLabel.text = sampleData[indexPath.row].weight
         cell.sizeLabel.text = sampleData[indexPath.row].size
         cell.offerPriceLabel.text = "\(sampleData[indexPath.row].currency) \(sampleData[indexPath.row].discountAmount)"
-        cell.ratingLabel.text = "\(sampleData[indexPath.row].rating) ratings"
+        cell.ratingLabel.text = "\(sampleData[indexPath.row].rating)".addSuffix(" ratings")
         cell.originalPriceLabel.text = "\(sampleData[indexPath.row].currency) \(sampleData[indexPath.row].price)"
-        cell.offerPercentLabel.text = "  \(sampleData[indexPath.row].discountPercent)% OFF  "
+        cell.offerPercentLabel.text = sampleData[indexPath.row].discountPercent.addPercentOffSuffix().addPadding(3)
         return cell
     }
     

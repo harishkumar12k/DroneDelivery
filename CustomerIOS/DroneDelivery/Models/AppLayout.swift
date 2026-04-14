@@ -41,14 +41,14 @@ struct Category {
 
 struct QuickProducts {
     var title: String
-    var producst: [HomeProducst]
+    var allProducts: [HomeProduct]
 }
 
 struct QuoteOfDay {
     var quote: String
 }
 
-struct HomeProducst {
+struct HomeProduct {
     var image: String
     var offerPercent: String
     var title: String
@@ -75,29 +75,61 @@ class AppLayout {
         Tab(iconSelected: "profile", iconDeselevcted: "profile", name: "Profile", controller: "ProfileVC")
     ]
     
-    var homeStack: [HomeStack] = [
-        .address(AddressBar(title: "Delivered in 2 Mins", originalAddress: "#123, Street1, HSK, Bangalore", cartImage: "cart")),
-        .search(SearchBar(placeholder: "Search here...", isHidden: false)),
-        .advertise(AdvertiseBar(images: ["", ""], isHidden: false)),
-        .category(CategoryView(title: "Category", categoryList: [
-            Category(image: "viggies", type: "viggies", title: "Viggies"),
-            Category(image: "fruits", type: "fruits", title: "Fruits"),
-            Category(image: "milkProducts", type: "milkProducts", title: "Milk Products"),
-            Category(image: "meatAndFish", type: "meatAndFish", title: "Meat And Fish"),
-            Category(image: "medicineAndTablets", type: "medicineAndTablets", title: "Medicine And Tablets"),
-            Category(image: "cakeAndChocolates", type: "cakeAndChocolates", title: "Cake And Chocolates"),
-            Category(image: "mobileAndAccessories", type: "mobileAndAccessories", title: "Mobile And Accessories"),
-            Category(image: "dressAndShoes", type: "dressAndShoes", title: "Dress And Shoes"),
-            Category(image: "sportsAndGames", type: "sportsAndGames", title: "Sports And Games"),
-            Category(image: "toys", type: "toys", title: "Toys"),
-            Category(image: "cosmetics", type: "cosmetics", title: "Cosmetics"),
-            Category(image: "petFood", type: "petFood", title: "Pet Food")
-        ])),
-        .quickProducts([
-            QuickProducts(title: "2 Minutes Delivery", producst: []),
-            QuickProducts(title: "5 Minutes Delivery", producst: [])
-        ]),
-        .quote(QuoteOfDay(quote: "All days are not same."))
-    ]
+    var twoMinutesData: [HomeProduct] = [
+        HomeProduct(image: "", offerPercent: "10", title: "Demo 1", weight: "100", offerPrice: "150", originalPrice: "200"),
+        HomeProduct(image: "", offerPercent: "10", title: "Demo 2", weight: "100", offerPrice: "150", originalPrice: "200"),
+        HomeProduct(image: "", offerPercent: "10", title: "Demo 3", weight: "100", offerPrice: "150", originalPrice: "200"),
+        HomeProduct(image: "", offerPercent: "10", title: "Demo 4", weight: "100", offerPrice: "150", originalPrice: "200"),
+        HomeProduct(image: "", offerPercent: "10", title: "Demo 5", weight: "100", offerPrice: "150", originalPrice: "200")
+        ]
+    
+    var fiveMinutesData: [HomeProduct] = [
+        HomeProduct(image: "", offerPercent: "10", title: "Demo 6", weight: "100", offerPrice: "150", originalPrice: "200"),
+        HomeProduct(image: "", offerPercent: "10", title: "Demo 7", weight: "100", offerPrice: "150", originalPrice: "200"),
+        HomeProduct(image: "", offerPercent: "10", title: "Demo 8", weight: "100", offerPrice: "150", originalPrice: "200"),
+        HomeProduct(image: "", offerPercent: "10", title: "Demo 9", weight: "100", offerPrice: "150", originalPrice: "200"),
+        HomeProduct(image: "", offerPercent: "10", title: "Demo 10", weight: "100", offerPrice: "150", originalPrice: "200")
+        ]
+    
+    var similarMinutesData: [HomeProduct] = [
+        HomeProduct(image: "", offerPercent: "10", title: "Similar 1", weight: "100", offerPrice: "150", originalPrice: "200"),
+        HomeProduct(image: "", offerPercent: "10", title: "Similar 2", weight: "100", offerPrice: "150", originalPrice: "200"),
+        HomeProduct(image: "", offerPercent: "10", title: "Similar 3", weight: "100", offerPrice: "150", originalPrice: "200"),
+        HomeProduct(image: "", offerPercent: "10", title: "Similar 4", weight: "100", offerPrice: "150", originalPrice: "200"),
+        HomeProduct(image: "", offerPercent: "10", title: "Similar 5", weight: "100", offerPrice: "150", originalPrice: "200")
+        ]
+    
+    var homeStack: [HomeStack] = []
+    
+    init() {
+        initialiseAdditionalData()
+    }
+    
+    func initialiseAdditionalData() {
+        homeStack = [
+            .address(AddressBar(title: "Delivered in 2 Mins", originalAddress: "#123, Street1, HSK, Bangalore", cartImage: "cart")),
+            .search(SearchBar(placeholder: "Search here...", isHidden: false)),
+            .advertise(AdvertiseBar(images: ["", ""], isHidden: false)),
+            .category(CategoryView(title: "Category", categoryList: [
+                Category(image: "viggies", type: "viggies", title: "Viggies"),
+                Category(image: "fruits", type: "fruits", title: "Fruits"),
+                Category(image: "milkProducts", type: "milkProducts", title: "Milk Products"),
+                Category(image: "meatAndFish", type: "meatAndFish", title: "Meat And Fish"),
+                Category(image: "medicineAndTablets", type: "medicineAndTablets", title: "Medicine And Tablets"),
+                Category(image: "cakeAndChocolates", type: "cakeAndChocolates", title: "Cake And Chocolates"),
+                Category(image: "mobileAndAccessories", type: "mobileAndAccessories", title: "Mobile And Accessories"),
+                Category(image: "dressAndShoes", type: "dressAndShoes", title: "Dress And Shoes"),
+                Category(image: "sportsAndGames", type: "sportsAndGames", title: "Sports And Games"),
+                Category(image: "toys", type: "toys", title: "Toys"),
+                Category(image: "cosmetics", type: "cosmetics", title: "Cosmetics"),
+                Category(image: "petFood", type: "petFood", title: "Pet Food")
+            ])),
+            .quickProducts([
+                QuickProducts(title: "2 Minutes Delivery", allProducts: twoMinutesData),
+                QuickProducts(title: "5 Minutes Delivery", allProducts: fiveMinutesData)
+            ]),
+            .quote(QuoteOfDay(quote: "All days are not same."))
+        ]
+    }
     
 }

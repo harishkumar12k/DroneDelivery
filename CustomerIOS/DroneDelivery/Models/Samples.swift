@@ -10,7 +10,7 @@ struct Samples {
     static func samples() -> [ItemDetail] {
         var items: [ItemDetail] = []
         for index in 0...5 {
-            let item = ItemDetail(id: Double(index), name: "Name \(index + 1)", price: "122", mrp: "222", currency: "\u{20B9}", discountPercent: "45", discountAmount: "100", weight: "100 grams", size: "19 x 30 x 15", rating: 4.9, baseImageUrl: "https://st2.depositphotos.com/12822122/42029/i/450/depositphotos_420292042-stock-photo-asian-girls-holding-sale-shopping.jpg", imageSetUrls: [])
+            let item = ItemDetail(id: Double(index), name: "Name \(index + 1)", price: "122", mrp: "222", currency: StringConstants.rupeesText, discountPercent: "45", discountAmount: "100", weight: "100 grams", size: "19 x 30 x 15", rating: 4.9, baseImageUrl: "https://st2.depositphotos.com/12822122/42029/i/450/depositphotos_420292042-stock-photo-asian-girls-holding-sale-shopping.jpg", imageSetUrls: [])
             items.append(item)
         }
         return items

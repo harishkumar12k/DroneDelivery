@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -72,83 +71,51 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0U1-QY-Vnf">
-                                        <rect key="frame" x="36.666666666666664" y="98.666666666666671" width="10" height="20.333333333333329"/>
+                                        <rect key="frame" x="36.666666666666664" y="98.666666666666671" width="13" height="20.333333333333329"/>
                                         <attributedString key="attributedText">
                                             <fragment content="50">
                                                 <attributes>
-                                                    <font key="NSFont" size="10" name=".SFNS-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="10"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nZA-oB-rfS">
-                                        <rect key="frame" x="170" y="98.666666666666671" width="126" height="26"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTw-sM-eVU">
-                                                <rect key="frame" x="0.0" y="0.0" width="42" height="26"/>
-                                                <inset key="contentEdgeInsets" minX="8" minY="4" maxX="8" maxY="4"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="  -  ">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="decreaseItem:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="sax-DN-FJf"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPL-Ob-Oq0">
-                                                <rect key="frame" x="42" y="0.0" width="42" height="26"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <inset key="contentEdgeInsets" minX="8" minY="4" maxX="8" maxY="4"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="5">
-                                                    <color key="titleColor" name="ColorPrimary"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="addToFlight:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="mSO-zI-jI7"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsE-R4-k90">
-                                                <rect key="frame" x="84" y="0.0" width="42" height="26"/>
-                                                <inset key="contentEdgeInsets" minX="8" minY="4" maxX="8" maxY="4"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="  +  ">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="increaseItem:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="I8C-K3-eqA"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" name="ColorPrimary"/>
-                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCD-pz-KAg" customClass="AddToCartView" customModule="DroneDelivery" customModuleProvider="target">
+                                        <rect key="frame" x="57.666666666666671" y="98.666666666666671" width="238.33333333333331" height="40.000000000000014"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="ZRG-al-iBF"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="hfy-Kp-3NZ" secondAttribute="trailing" constant="8" id="0hF-Hh-RxZ"/>
-                                    <constraint firstItem="QVS-aE-Njr" firstAttribute="top" secondItem="qTw-sM-eVU" secondAttribute="top" id="0mX-L1-Wsa"/>
-                                    <constraint firstItem="nZA-oB-rfS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0U1-QY-Vnf" secondAttribute="trailing" constant="8" id="5CH-vR-K49"/>
                                     <constraint firstItem="KZ6-Ku-cAb" firstAttribute="top" secondItem="y1O-mI-cJm" secondAttribute="top" constant="8" id="9TR-v7-X2V"/>
-                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="nZA-oB-rfS" secondAttribute="bottom" constant="8" id="Bg3-kC-Yye"/>
                                     <constraint firstItem="hfy-Kp-3NZ" firstAttribute="top" secondItem="y1O-mI-cJm" secondAttribute="top" constant="8" id="Bgi-2h-lX7"/>
                                     <constraint firstItem="0U1-QY-Vnf" firstAttribute="top" secondItem="QVS-aE-Njr" secondAttribute="top" id="Cgq-yS-rh1"/>
                                     <constraint firstItem="I9X-Dl-W3H" firstAttribute="top" secondItem="MLg-Xa-PYR" secondAttribute="bottom" constant="8" id="GRG-7V-z71"/>
+                                    <constraint firstItem="0U1-QY-Vnf" firstAttribute="top" secondItem="tCD-pz-KAg" secondAttribute="top" id="McI-Y0-aSC"/>
+                                    <constraint firstItem="tCD-pz-KAg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0U1-QY-Vnf" secondAttribute="trailing" constant="8" id="Pox-NF-qvs"/>
+                                    <constraint firstItem="tCD-pz-KAg" firstAttribute="leading" secondItem="0U1-QY-Vnf" secondAttribute="trailing" constant="8" placeholder="YES" id="PvG-Jl-A9G"/>
                                     <constraint firstItem="0U1-QY-Vnf" firstAttribute="bottom" secondItem="QVS-aE-Njr" secondAttribute="bottom" id="TH1-Ul-aGC"/>
                                     <constraint firstItem="MLg-Xa-PYR" firstAttribute="top" secondItem="VJl-W1-oXV" secondAttribute="bottom" constant="8" id="WHX-yb-TLy"/>
                                     <constraint firstItem="QVS-aE-Njr" firstAttribute="leading" secondItem="y1O-mI-cJm" secondAttribute="leading" constant="8" id="Zcd-jk-aMa"/>
                                     <constraint firstItem="VJl-W1-oXV" firstAttribute="top" secondItem="o1T-cX-ydc" secondAttribute="bottom" constant="8" id="aBG-fm-fhw"/>
                                     <constraint firstItem="KZ6-Ku-cAb" firstAttribute="leading" secondItem="y1O-mI-cJm" secondAttribute="leading" constant="8" id="aVj-Xx-HBv"/>
                                     <constraint firstItem="0U1-QY-Vnf" firstAttribute="leading" secondItem="QVS-aE-Njr" secondAttribute="trailing" constant="8" symbolic="YES" id="duY-gy-X7f"/>
+                                    <constraint firstItem="tCD-pz-KAg" firstAttribute="top" secondItem="I9X-Dl-W3H" secondAttribute="bottom" constant="8" id="edR-MB-vch"/>
                                     <constraint firstItem="o1T-cX-ydc" firstAttribute="top" secondItem="y1O-mI-cJm" secondAttribute="top" constant="8" id="eo0-LS-2kA"/>
                                     <constraint firstAttribute="trailing" secondItem="VJl-W1-oXV" secondAttribute="trailing" constant="8" id="evI-rC-53C"/>
                                     <constraint firstAttribute="trailing" secondItem="I9X-Dl-W3H" secondAttribute="trailing" constant="8" id="fLd-vb-eya"/>
                                     <constraint firstItem="hfy-Kp-3NZ" firstAttribute="leading" secondItem="o1T-cX-ydc" secondAttribute="trailing" constant="8" id="fgs-9C-xPx"/>
                                     <constraint firstItem="MLg-Xa-PYR" firstAttribute="leading" secondItem="KZ6-Ku-cAb" secondAttribute="trailing" constant="8" id="gfc-to-9UG"/>
-                                    <constraint firstItem="nZA-oB-rfS" firstAttribute="top" secondItem="I9X-Dl-W3H" secondAttribute="bottom" constant="8" id="mAH-Ih-tjr"/>
                                     <constraint firstItem="o1T-cX-ydc" firstAttribute="leading" secondItem="KZ6-Ku-cAb" secondAttribute="trailing" constant="8" id="nyi-dE-OXw"/>
-                                    <constraint firstAttribute="trailing" secondItem="nZA-oB-rfS" secondAttribute="trailing" constant="8" id="o4V-nr-09x"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tCD-pz-KAg" secondAttribute="bottom" constant="8" id="paq-A0-zVV"/>
                                     <constraint firstAttribute="trailing" secondItem="MLg-Xa-PYR" secondAttribute="trailing" constant="8" id="pcc-Pu-z0J"/>
+                                    <constraint firstAttribute="trailing" secondItem="tCD-pz-KAg" secondAttribute="trailing" constant="8" id="qCo-Wa-6hz"/>
                                     <constraint firstItem="VJl-W1-oXV" firstAttribute="leading" secondItem="KZ6-Ku-cAb" secondAttribute="trailing" constant="8" id="qci-rI-dZj"/>
                                     <constraint firstItem="I9X-Dl-W3H" firstAttribute="leading" secondItem="MLg-Xa-PYR" secondAttribute="leading" id="seq-qO-mRn"/>
                                 </constraints>
@@ -172,11 +139,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="addToCartButton" destination="IPL-Ob-Oq0" id="6mi-dm-RZE"/>
-                <outlet property="addToCartSV" destination="nZA-oB-rfS" id="yqZ-wd-bG6"/>
                 <outlet property="bgView" destination="y1O-mI-cJm" id="KfZ-Ef-gac"/>
-                <outlet property="decreaseCartItem" destination="qTw-sM-eVU" id="aZB-Eh-L7W"/>
-                <outlet property="increaseCartItem" destination="fsE-R4-k90" id="ddm-6P-ZMX"/>
                 <outlet property="itemImageView" destination="KZ6-Ku-cAb" id="g2o-Bx-3Vg"/>
                 <outlet property="nameLabel" destination="o1T-cX-ydc" id="YPa-6L-3ll"/>
                 <outlet property="offerPercentLabel" destination="hfy-Kp-3NZ" id="10M-hn-Ke3"/>
@@ -191,10 +154,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="testImage04" width="996" height="490"/>
-        <namedColor name="ColorPrimary">
-            <color red="0.20784313725490197" green="0.2196078431372549" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="testImage04" width="1034" height="564"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

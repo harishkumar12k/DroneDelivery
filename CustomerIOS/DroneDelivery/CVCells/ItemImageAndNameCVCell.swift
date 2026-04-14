@@ -16,7 +16,8 @@ class ItemImageAndNameCVCell: UICollectionViewCell {
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var offerPriceLabel: UILabel!
     @IBOutlet weak var maxPriceLabel: UILabel!
-
+    @IBOutlet weak var offerInPercent: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         DispatchQueue.main.async {
@@ -30,6 +31,17 @@ class ItemImageAndNameCVCell: UICollectionViewCell {
             self.shadowView.layer.shadowOffset = CGSize(width: 0, height: 0)
 
         }
+        initialiseViews()
+    }
+    
+    func initialiseViews() {
+        nameLabel.font = .fontSemiBold(size: 14)
+        weightLabel.font = .fontLight(size: 12)
+        offerPriceLabel.font = .fontLight(size: 12)
+        maxPriceLabel.font = .fontLight(size: 12)
+        offerInPercent.font = .fontSemiBold(size: 12)
+        offerInPercent.backgroundColor = .colorBanner
+        maxPriceLabel.addStrikeText()
     }
 
 }
