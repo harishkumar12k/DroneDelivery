@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "pickUpDrop.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
